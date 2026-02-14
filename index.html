@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>San Valentín 💘</title>
 
-<!-- Fuente bonita -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -73,7 +72,6 @@ button {
     position: relative;
 }
 
-/* Corazones flotando */
 @keyframes floatUp {
     to {
         transform: translateY(-110vh);
@@ -86,7 +84,7 @@ button {
 <body>
 
 <div class="card">
-    <img src="https://i.pinimg.com/originals/f6/a5/f7/f6a5f7ddff1f05cbcc560256b9f98c2e.gif">
+    <img src="https://i.imgur.com/3ZQ3Z6H.jpeg">
 
     <h2 id="question">¿Quieres ser mi San Valentín Nicolle? 🥺👉👈</h2>
     <p>Prometo hacerte muy muy feliz y cuidar de tus piojos ❤️</p>
@@ -107,13 +105,16 @@ let noSize = 16;
 let clickCount = 0;
 
 let messages = [
-    "¿Segura Nicolle? 🥺",
-    "¿Segurísima? 😳",
-    "Última oportunidad 😭",
-    "Ándaleeee 💘",
-    "¿Qué te cuesta decir que sí? 😩",
-    "Piénsalo bien 😔",
-    "No es opción 😌"
+"¿Segura Nicolle? 🥺",
+"¿Segurísima segurísima? 😳",
+"¿100% confirmada esa decisión? 🤨",
+"No seas así conmigo 😭",
+"Ándaleee, mira el gatito 🐱🌹",
+"Te prometo que soy buena inversión 😌",
+"Última oportunidad… o no tanto 😅",
+"Imagínate diciéndole a tus amigas que me rechazaste 😔",
+"Respira… analiza… y presiona 'Sí' 😌",
+"El destino claramente quiere que digas que sí ✨"
 ];
 
 function moveNoButton() {
@@ -122,16 +123,14 @@ function moveNoButton() {
         navigator.vibrate(200);
     }
 
-    if (clickCount < messages.length) {
-        question.innerText = messages[clickCount];
-    }
+    question.innerText = messages[clickCount % messages.length];
     clickCount++;
 
-    noSize -= 2;
+    noSize -= 1;
     if (noSize < 8) noSize = 8;
     no.style.fontSize = noSize + "px";
 
-    yesSize += 4;
+    yesSize += 2;
     yes.style.fontSize = yesSize + "px";
     yes.style.padding = "15px 35px";
 
@@ -146,7 +145,6 @@ no.addEventListener("touchstart", function(e) {
     moveNoButton();
 });
 
-/* Corazones suaves mientras está la pregunta */
 function createHeart() {
     let heart = document.createElement("div");
     heart.innerText = "💗";
@@ -164,16 +162,17 @@ function createHeart() {
 
 setInterval(createHeart, 500);
 
-/* Cuando dice que sí */
 yes.addEventListener("click", function() {
 
     document.body.innerHTML = `
-    <div style="text-align:center; color:white; padding:30px; font-family:'Poppins',sans-serif;">
+    <div style="text-align:center; color:white; padding:40px; font-family:'Poppins',sans-serif;">
         <h1 style="font-family:'Pacifico',cursive; font-size:55px;">YAAAAYYY 💘👑</h1>
 
-        <h1 style="font-size:45px;">Nicolle ahora es oficialmente</h1>
+        <h1 style="font-size:50px;">Nicolle ahora es oficialmente</h1>
 
-        <h1 style="font-size:60px;">MI SAN VALENTÍN 💖✨</h1>
+        <h1 style="font-size:70px; text-shadow: 0 0 15px white;">
+        MI PRINCESA PIOJOSA 💖✨👑
+        </h1>
 
         <p style="font-size:22px; margin-top:20px;">
         Prometo hacerte la princesa más feliz del mundo 👑💞<br><br>
@@ -182,12 +181,14 @@ yes.addEventListener("click", function() {
         Prometo hacerte reír hasta que te duela la panza 😂💕<br><br>
         Prometo quererte hoy, mañana y todos los días de mi vida 🫶✨<br><br>
         Porque tú, Nicolle, eres lo más hermoso que me ha pasado 🌸💘<br><br>
-        <strong>PRINCESA MÁS HERMOSA DEL UNIVERSO 👑🌎💖</strong>
+        <strong>MI PRINCESA PIOJOSA 💖✨</strong>
         </p>
     </div>
     `;
 
-    document.body.style.background = "linear-gradient(135deg, #ff4d6d, #ff1e56)";
+    document.body.style.backgroundImage = "url('https://i.imgur.com/8bKQXyT.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
 
     function megaHearts() {
         let heart = document.createElement("div");
